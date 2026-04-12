@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Happy Birthday, Beautiful</title>
+    <meta
+      name="description"
+      content="A personal birthday website made with love."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <canvas id="confetti" aria-hidden="true"></canvas>
+
+    <header class="hero">
+      <img
+        class="hero__photo"
+        src="https://images.unsplash.com/photo-1564067424144-32672eb37819?auto=format&fit=crop&fm=jpg&q=75&w=2400"
+        alt="Soft pink and white lilies"
+      />
+      <div class="hero__shade"></div>
+      <nav class="topbar" aria-label="Birthday links">
+        <a href="#letter">Letter</a>
+        <a href="#memories">Memories</a>
+        <a href="#tonight">Tonight</a>
+      </nav>
+      <section class="hero__content" aria-labelledby="birthday-title">
+        <p class="eyebrow" id="hero-kicker">For my Assalim</p>
+        <h1 id="birthday-title">Happy birthday, <span data-field="name">beautiful</span>.</h1>
+        <p class="hero__message" data-field="heroMessage">
+          Today is for you: your smile, your softness, your beauty, and every
+          little thing that makes being with you feel so special.
+        </p>
+        <div class="hero__actions">
+          <a class="button button--primary" href="#letter">Open your letter</a>
+          <button class="button button--ghost" id="celebrateButton" type="button">
+            Make a wish
+          </button>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <section class="intro" aria-label="Birthday countdown">
+        <div class="intro__text">
+          <h2>Days I've been lucky enough to spend with you</h2>
+        </div>
+        <div class="countdown" aria-live="polite">
+          <span id="countdownNumber">1210</span>
+          <small id="countdownLabel">days in, 101 days loved this year</small>
+        </div>
+      </section>
+
+      <section class="letter" id="letter">
+        <div class="letter__image">
+          <img
+            src="assets/dinner-date.jpg"
+            alt="A dinner date portrait"
+          />
+        </div>
+        <article class="letter__body">
+          <p class="section-kicker">A little note</p>
+          <h2>To <span data-field="name">beautiful</span>,</h2>
+          <p data-field="letterOne">
+            I hope today makes you feel as loved as you make me feel. You have
+            this quiet magic about you: calm, elegant, funny, sweet, and
+            unforgettable without even trying.
+          </p>
+          <p data-field="letterTwo">
+            I love the way you look at the world, the way you carry yourself,
+            and the way every memory with you becomes something I want to keep.
+            I am so grateful I get to love you.
+          </p>
+          <p class="signature">Always yours, <span data-field="fromName">me</span></p>
+        </article>
+      </section>
+
+      <section class="reasons" aria-labelledby="reasons-title">
+        <div class="section-heading">
+          <p class="section-kicker">Tiny truths</p>
+          <h2 id="reasons-title">Reasons I love you</h2>
+        </div>
+        <div class="reason-box">
+          <p id="reasonText">You make every room feel softer just by being in it.</p>
+          <button class="button button--primary" id="reasonButton" type="button">
+            Another reason
+          </button>
+        </div>
+      </section>
+
+      <section class="memories" id="memories" aria-labelledby="memories-title">
+        <div class="section-heading">
+          <p class="section-kicker">Favorite chapters</p>
+          <h2 id="memories-title">A few moments I keep replaying</h2>
+        </div>
+        <div class="memory-grid">
+          <article class="memory-card">
+            <img
+              src="assets/mirror-couple.jpg"
+              alt="A mirror photo together"
+            />
+            <div>
+              <h3 data-field="memoryOneTitle">When we dressed up together</h3>
+              <p data-field="memoryOneText">
+                I wish that night never ended. Seeing you laugh and dance
+                couldn't have made me happier.
+              </p>
+            </div>
+          </article>
+          <article class="memory-card">
+            <img
+              src="assets/new-memory-two.png"
+              alt="A favorite memory"
+            />
+            <div>
+              <h3 data-field="memoryTwoTitle">The little everyday moments</h3>
+              <p data-field="memoryTwoText">
+                Even the simple pictures feel special because they are you, and
+                because they remind me I get to know this side of you.
+              </p>
+            </div>
+          </article>
+          <article class="memory-card">
+            <img
+              src="assets/new-memory-three.jpg"
+              alt="A favorite memory"
+            />
+            <div>
+              <h3 data-field="memoryThreeTitle">Dates I never want to forget</h3>
+              <p data-field="memoryThreeText">
+                Being next to you is one of my favorite places to be.
+                Somehow you make the whole table feel brighter.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="tonight" id="tonight" aria-labelledby="tonight-title">
+        <div>
+          <p class="section-kicker">Birthday plan</p>
+          <h2 id="tonight-title">Tonight is all yours.</h2>
+          <p>
+            Tap for a birthday plan. Whatever we choose, I just want you smiling
+            the way you deserve to smile today.
+          </p>
+        </div>
+        <div class="date-picker">
+          <p id="dateIdea">Dinner somewhere pretty, dessert after, and photos before we leave.</p>
+          <button class="button button--primary" id="dateButton" type="button">
+            Pick a plan
+          </button>
+        </div>
+      </section>
+
+      <section class="edit-panel" aria-labelledby="edit-title">
+        <div>
+          <p class="section-kicker">Personalize</p>
+          <h2 id="edit-title">Make it sound like you.</h2>
+          <p>
+            Change the names and a few lines, then keep the page as her little
+            birthday surprise.
+          </p>
+        </div>
+        <form id="editForm" class="edit-form">
+          <label>
+            Her name
+            <input name="name" value="beautiful" />
+          </label>
+          <label>
+            Your name
+            <input name="fromName" value="me" />
+          </label>
+          <label>
+            Main message
+            <textarea name="heroMessage" rows="3">Today is for you: your smile, your softness, your beauty, and every little thing that makes being with you feel so special.</textarea>
+          </label>
+          <label>
+            First letter line
+            <textarea name="letterOne" rows="3">I hope today makes you feel as loved as you make me feel. You have this quiet magic about you: calm, elegant, funny, sweet, and unforgettable without even trying.</textarea>
+          </label>
+          <label>
+            Second letter line
+            <textarea name="letterTwo" rows="3">I love the way you look at the world, the way you carry yourself, and the way every memory with you becomes something I want to keep. I am so grateful I get to love you.</textarea>
+          </label>
+          <div class="edit-form__actions">
+            <button class="button button--primary" type="submit">Save changes</button>
+            <button class="button button--ghost" id="resetButton" type="button">Reset</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>Made for <span data-field="name">beautiful</span>, with all my heart.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
