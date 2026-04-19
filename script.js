@@ -73,12 +73,14 @@ function renderState(state) {
     field.textContent = state[key] || defaults[key] || "";
   });
 
-  Object.entries(state).forEach(([key, value]) => {
-    const input = editForm.elements[key];
-    if (input) {
-      input.value = value;
-    }
-  });
+  if (editForm) {
+    Object.entries(state).forEach(([key, value]) => {
+      const input = editForm.elements[key];
+      if (input) {
+        input.value = value;
+      }
+    });
+  }
 }
 
 function nextFrom(list, currentIndex) {
@@ -139,26 +141,30 @@ function celebrate() {
   drawConfetti();
 }
 
-editForm.addEventListener("submit", (event) => {
-  event.preventDefault();
-  const formData = new FormData(editForm);
-  const current = loadState();
-  const next = { ...current };
+if (editForm) {
+  editForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const formData = new FormData(editForm);
+    const current = loadState();
+    const next = { ...current };
 
-  for (const [key, value] of formData.entries()) {
-    next[key] = String(value).trim() || defaults[key] || "";
-  }
+    for (const [key, value] of formData.entries()) {
+      next[key] = String(value).trim() || defaults[key] || "";
+    }
 
-  saveState(next);
-  renderState(next);
-  celebrate();
-});
+    saveState(next);
+    renderState(next);
+    celebrate();
+  });
+}
 
-resetButton.addEventListener("click", () => {
-  localStorage.removeItem(storageKey);
-  renderState({ ...defaults });
-  celebrate();
-});
+if (resetButton) {
+  resetButton.addEventListener("click", () => {
+    localStorage.removeItem(storageKey);
+    renderState({ ...defaults });
+    celebrate();
+  });
+}
 
 reasonButton.addEventListener("click", () => {
   reasonIndex = nextFrom(reasons, reasonIndex);
