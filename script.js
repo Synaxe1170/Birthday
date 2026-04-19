@@ -1,10 +1,9 @@
 const defaults = {
   name: "beautiful",
-  fromName: "me",
-  heroMessage:
-    "Today is for you: your smile, your softness, your beauty, and every little thing that makes being with you feel so special.",
+  fromName: "A",
+  heroMessage: "You make me the happiest man in the whole universe.",
   letterOne:
-    "I hope today makes you feel as loved as you make me feel. You have this quiet magic about you: calm, elegant, funny, sweet, and unforgettable without even trying.",
+    "I hope today makes you feel as loved as you make me feel. You are so elegant, funny, sweet, and unforgettable without even trying.",
   letterTwo:
     "I love the way you look at the world, the way you carry yourself, and the way every memory with you becomes something I want to keep. I am so grateful I get to love you.",
   memoryOneTitle: "When we dressed up together",
@@ -37,7 +36,7 @@ const dateIdeas = [
   "A late-night drive with music, dessert, and my hand in yours.",
 ];
 
-const storageKey = "birthday-site-personalization-v3";
+const storageKey = "birthday-site-personalization-v4";
 const fields = document.querySelectorAll("[data-field]");
 const editForm = document.querySelector("#editForm");
 const reasonText = document.querySelector("#reasonText");
